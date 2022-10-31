@@ -2,6 +2,18 @@
 
 - Node.js, Express, Pug, Web Socket, http
 
-- [✅] 이용한 채팅 기능 구현
+- [✅] 실시간 채팅 기능 구현
 
 # Redux
+
+- [✅] redux - Counter
+
+# Hooks
+
+- [✅] useState - Counter
+- [✅] useInput - Validator
+- [✅] useTabs - Select Button
+
+# TypeScript
+
+- [✅] overview
