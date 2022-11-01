@@ -37,3 +37,9 @@ Node.js, Express, Pug, Web Socket, http
 
 - [✅] OverView
 - [✅] Functions
+
+## Vue
+
+- [✅] npm init vite-app [ProjectName] (Vue Projec 생성 명령어)
+- [✅] npm run dev (Vue 개발 환경 실행)
+- [✅] npm run build (프로젝트 빌드 (배포용))
