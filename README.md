@@ -14,8 +14,8 @@
 
 Node.js, Express, Pug, Web Socket, http
 
-[✅] 실시간 채팅 기능 구현
-[✅] Socket IO
+- [✅] 실시간 채팅 기능 구현
+- [✅] Socket IO
 
 ## Redux
 
@@ -24,14 +24,14 @@ Node.js, Express, Pug, Web Socket, http
 
 ## Hooks
 
-[✅] useState - Counter
-[✅] useInput - Validator
-[✅] useTabs - Select Button
-[✅] useEffect - Counter
-[✅] useTitle - Loading Title Page(setTimeOut)
-[✅] useRef & useClick - ref Click or useEffect Clean UP
-[✅] useConfirm - message
-[✅] usePreventLeave - Window Close alarm
+- [✅] useState - Counter
+- [✅] useInput - Validator
+- [✅] useTabs - Select Button
+- [✅] useEffect - Counter
+- [✅] useTitle - Loading Title Page(setTimeOut)
+- [✅] useRef & useClick - ref Click or useEffect Clean UP
+- [✅] useConfirm - message
+- [✅] usePreventLeave - Window Close alarm
 
 ## TypeScript
 
