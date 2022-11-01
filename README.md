@@ -1,19 +1,38 @@
-# Zoom Clone
+# 우분투 특정 포트 죽이기
 
-- Node.js, Express, Pug, Web Socket, http
+## 특정 포트 확인
 
-- [✅] 실시간 채팅 기능 구현
+- netstat -nap | grep [port]
 
-# Redux
+## 특정 프로세스 죽이기
 
-- [✅] redux - Counter
+- kill -9 [PID]
 
-# Hooks
+# 매일 매일 공부 현황
 
-- [✅] useState - Counter
-- [✅] useInput - Validator
-- [✅] useTabs - Select Button
+## Zoom Clone
 
-# TypeScript
+Node.js, Express, Pug, Web Socket, http
+
+[✅] 실시간 채팅 기능 구현
+[✅] Socket IO
+
+## Redux
+
+[✅] redux - Counter
+[✅] redux - ToDoList
+
+## Hooks
+
+[✅] useState - Counter
+[✅] useInput - Validator
+[✅] useTabs - Select Button
+[✅] useEffect - Counter
+[✅] useTitle - Loading Title Page(setTimeOut)
+[✅] useRef & useClick - ref Click or useEffect Clean UP
+[✅] useConfirm - message
+[✅] usePreventLeave - Window Close alarm
+
+## TypeScript
 
 - [✅] overview

@@ -1,41 +1,75 @@
-const messageList = document.querySelector("ul"); // DOM의 태그 선택
-const nickForm = document.querySelector("#nick"); // DOM의 nick id 태그 선택
-const messageForm = document.querySelector("#message"); // DOM의 message id 태그 선택
-const socket = new WebSocket(`ws://${window.location.host}`); // 웹 소켓 로컬 주소로 생성
+const socket = io();
+const welcome = document.getElementById("welcome");
+const enterForm = welcome.querySelector("form");
+const room = document.getElementById("room");
+let roomName;
+room.hidden = true;
+const addMessage = (message) => {
+  const ul = room.querySelector("ul");
+  const li = document.createElement("li");
+  li.innerText = message;
+  ul.append(li);
+};
+const handleNicknameSubmit = (event) => {
+  event.preventDefault();
+  const input = room.querySelector("#name input");
+  socket.emit("nickname", input.value);
+};
+const handleMessageSubmit = (event) => {
+  event.preventDefault();
+  const input = room.querySelector("#msg input");
+  const { value } = input;
+  socket.emit("new_message", value, roomName, () => {
+    addMessage(`You: ${value}`);
+  });
+  input.value = "";
+};
+const showRoom = () => {
+  const h3 = room.querySelector("h3");
+  h3.innerText = `Room ${roomName}`;
+  room.hidden = false;
+  welcome.hidden = true;
+  const msgForm = room.querySelector("#msg");
+  const nameForm = room.querySelector("#name");
+  msgForm.addEventListener("submit", handleMessageSubmit);
+  nameForm.addEventListener("submit", handleNicknameSubmit);
+};
 
-function makeMessage(type, payload) {
-  // 타입과 페이로드 받아서 JSON 형식으로 리턴함
-  const msg = { type, payload };
-  return JSON.stringify(msg);
-}
+const handleRoomSubmit = (event) => {
+  const roomNameInput = enterForm.querySelector("#roomName");
+  const nickNameInput = enterForm.querySelector("#name");
+  event.preventDefault();
+  socket.emit("enter_room", roomNameInput.value, nickNameInput.value, showRoom);
+  roomName = roomNameInput.value;
+  roomNameInput.value = "";
+  const changeNameInput = room.querySelector("#name input");
+  changeNameInput.value = nickNameInput.value;
+};
 
-function handleOpen() {
-  console.log("Connected to Server ✅"); // 소켓 열였을때 콘솔 출력
-}
-
-socket.addEventListener("open", handleOpen); // 소켓에 이벤트 리스너 설정
-
-socket.addEventListener("message", (message) => {
-  const li = document.createElement("li"); // 리스트 태그 생성
-  li.innerText = message.data; // 리스트 내용 메시지 넣기
-  messageList.append(li); // 메시지 리스트에 자식으로 태그 추가
+enterForm.addEventListener("submit", handleRoomSubmit);
+socket.on("welcome", (user, newCount) => {
+  const h3 = room.querySelector("h3");
+  h3.innerText = `Room ${roomName} (${newCount})`;
+  addMessage(`${user} arrived!`);
 });
-socket.addEventListener("close", () => {
-  console.log("Disconnected from Server ❌"); // 소켓 닫히면 출력
+
+socket.on("bye", (left, newCount) => {
+  const h3 = room.querySelector("h3");
+  h3.innerText = `Room ${roomName} (${newCount})`;
+  addMessage(`${left} left ㅠㅠ`);
 });
 
-function handleSubmit(event) {
-  event.preventDefault(); // Submit의 기본적인 새로고침 막음
-  const input = messageForm.querySelector("input"); // Input  태그 선택
-  socket.send(makeMessage("new_message", input.value)); // 소켓으로 보내는데 메시지 생성 함수 사용
-  input.value = ""; // Input 값 초기화
-}
+socket.on("new_message", addMessage);
 
-function handleNickSubmit(event) {
-  event.preventDefault(); // Submit 이벤트는 기본적으로 새로고침을 가지고 있어서 막는 용도
-  const input = nickForm.querySelector("input"); // Input 태그 선택
-  socket.send(makeMessage("nickname", input.value)); // 메시지 생성 함수 결과를 보내기
-}
-
-messageForm.addEventListener("submit", handleSubmit); // 이벤트 리스너
-nickForm.addEventListener("submit", handleNickSubmit); // 이벤트 리스너
+socket.on("room_change", (rooms) => {
+  const roomList = welcome.querySelector("ul");
+  roomList.innerHTML = "";
+  if (rooms.length === 0) {
+    return;
+  }
+  rooms.forEach((room) => {
+    const li = document.createElement("li");
+    li.innerText = room;
+    roomList.append(li);
+  });
+});
