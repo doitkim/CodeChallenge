@@ -19,8 +19,8 @@ Node.js, Express, Pug, Web Socket, http
 
 ## Redux
 
-[✅] redux - Counter
-[✅] redux - ToDoList
+- [✅] redux - Counter
+- [✅] redux - ToDoList
 
 ## Hooks
 
@@ -35,4 +35,5 @@ Node.js, Express, Pug, Web Socket, http
 
 ## TypeScript
 
-- [✅] overview
+- [✅] OverView
+- [✅] Functions
