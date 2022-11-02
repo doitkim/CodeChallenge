@@ -1,12 +1,12 @@
-[:sparkling_heart:] ## 특정 포트 확인
+## [:sparkling_heart:] 특정 포트 확인
 
 - netstat -nap | grep [port]
 
-[:sparkling_heart:] ## 특정 프로세스 죽이기
+## [:sparkling_heart:] 특정 프로세스 죽이기
 
 - kill -9 [PID]
 
-[:sparkling_heart:] # 매일 매일 공부 현황
+# [:sparkling_heart:] 매일 매일 공부 현황
 
 ## Zoom Clone
 
@@ -19,6 +19,7 @@ Node.js, Express, Pug, Web Socket, http
 
 - [✅] redux - Counter
 - [✅] redux - ToDoList
+- [:arrow_forward:]] reactRedux - ToDoList
 
 ## Hooks
 
@@ -30,6 +31,9 @@ Node.js, Express, Pug, Web Socket, http
 - [✅] useRef & useClick - ref Click or useEffect Clean UP
 - [✅] useConfirm - message
 - [✅] usePreventLeave - Window Close alarm
+- [✅] useBeforeLeave - mouse leave prevent
+- [✅] useFadeIn & useNetwork
+- [✅] useScroll & useFullScreen
 
 ## TypeScript
 
