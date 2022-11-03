@@ -1,3 +1,6 @@
+  <!--START_SECTION:waka-->
+  <!--END_SECTION:waka-->
+
 ## [:sparkling_heart:] 특정 포트 확인
 
 - netstat -nap | grep [port]
@@ -19,7 +22,8 @@ Node.js, Express, Pug, Web Socket, http
 
 - [✅] redux - Counter
 - [✅] redux - ToDoList
-- [:arrow_forward:]] reactRedux - ToDoList
+- [✅] reactRedux - ToDoList
+- [✅] Redux Toolkit
 
 ## Hooks
 
@@ -39,6 +43,7 @@ Node.js, Express, Pug, Web Socket, http
 
 - [✅] OverView
 - [✅] Functions
+- [✅] CLASSES AND INTERFACES
 
 ## Vue
 
