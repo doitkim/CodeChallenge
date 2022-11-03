@@ -1,6 +1,3 @@
-  <!--START_SECTION:waka-->
-  <!--END_SECTION:waka-->
-
 ## [:sparkling_heart:] 특정 포트 확인
 
 - netstat -nap | grep [port]
