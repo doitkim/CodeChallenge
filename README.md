@@ -8,21 +8,18 @@
 
 # [:sparkling_heart:] 매일 매일 공부 현황
 
-## Zoom Clone
+## Redux [Finish]
 
-Node.js, Express, Pug, Web Socket, http
-
-- [✅] 실시간 채팅 기능 구현
-- [✅] Socket IO
-
-## Redux
+[⏰ 실전에 적용할 것!! 강의 다시 보지말 것!!]
 
 - [✅] redux - Counter
 - [✅] redux - ToDoList
 - [✅] reactRedux - ToDoList
 - [✅] Redux Toolkit
 
-## Hooks
+## Hooks [finish]
+
+[⏰ 실전에 적용할 것!! 강의 다시 보지말 것!!]
 
 - [✅] useState - Counter
 - [✅] useInput - Validator
@@ -32,22 +29,20 @@ Node.js, Express, Pug, Web Socket, http
 - [✅] useRef & useClick - ref Click or useEffect Clean UP
 - [✅] useConfirm - message
 - [✅] usePreventLeave - Window Close alarm
-- [✅] useBeforeLeave - mouse leave prevent
-- [✅] useFadeIn & useNetwork
+- [✅] useBeforeLeave - mouse leave prevent [공식문서 활용]
+- [✅] useFadeIn & useNetwork [공식문서 활용]
 - [✅] useScroll & useFullScreen
+- [✅] useNotification
+  참고 사이트 : [https://developer.mozilla.org/en-US/docs/Web/API/Notification]
+- [✅] useAxios [오래되서 안되니 공식문서 활용]
+
+## git
 
 ## TypeScript
 
 - [✅] OverView
 - [✅] Functions
 - [✅] CLASSES AND INTERFACES
-
-## Vue
-
-- [✅] npm init vite-app [ProjectName] (Vue Projec 생성 명령어)
-- [✅] npm run dev (Vue 개발 환경 실행)
-- [✅] npm run build (프로젝트 빌드 (배포용))
-- [:arrow_forward:] Vue3 기초 (진행중)
 
 ## Nodejs-book
 
@@ -59,6 +54,20 @@ Node.js, Express, Pug, Web Socket, http
 ## React Master
 
 - [:arrow_forward:] STYLED COMPONENTS
+
+## Zoom Clone
+
+Node.js, Express, Pug, Web Socket, http
+
+- [✅] 실시간 채팅 기능 구현
+- [✅] Socket IO
+
+## Vue
+
+- [✅] npm init vite-app [ProjectName] (Vue Projec 생성 명령어)
+- [✅] npm run dev (Vue 개발 환경 실행)
+- [✅] npm run build (프로젝트 빌드 (배포용))
+- [:arrow_forward:] Vue3 기초 (진행중)
 
 ## 웹어플리캐이션 완벽가이드
 
