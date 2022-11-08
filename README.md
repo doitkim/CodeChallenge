@@ -62,11 +62,13 @@
 - [✅] 알아두어야 할 자바스크립트
 - [✅] 노드 기능 알아보기
 - [✅] http 모듈로 서버 만들기
-- [▶️] 익스프레스 웹 서버 만들기
+- [✅] 익스프레스 웹 서버 만들기
+- [:arrow_forward:] MySQL
 
 ## React Master [⏯️]
 
-- [:arrow_forward:] STYLED COMPONENTS
+- [✅] STYLED COMPONENTS
+- [✅] TYPESCRIPT
 
 ## Zoom Clone [⏯️]
 
