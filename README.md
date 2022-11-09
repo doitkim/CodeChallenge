@@ -69,6 +69,7 @@
 
 - [✅] STYLED COMPONENTS
 - [✅] TYPESCRIPT
+- [✅] React Router v6
 
 ## Zoom Clone [⏯️]
 
