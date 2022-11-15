@@ -9,11 +9,14 @@ const passport = require("passport");
 
 dotenv.config();
 const pageRouter = require("./routes/page");
-const { sequelize } = require("./models/");
+const authRouter = require("./routes/auth");
+const postRouter = require("./routes/post");
+const userRouter = require("./routes/user");
+const { sequelize } = require("./models");
 const passportConfig = require("./passport");
 
 const app = express();
-passportConfig();
+passportConfig(); // 패스포트 설정
 app.set("port", process.env.PORT || 8001);
 app.set("view engine", "html");
 nunjucks.configure("views", {
@@ -32,6 +35,7 @@ sequelize
 
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/img", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
@@ -50,6 +54,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", pageRouter);
+app.use("/auth", authRouter);
+app.use("/post", postRouter);
+app.use("/user", userRouter);
+
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
   error.status = 404;
@@ -57,12 +65,11 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
+  console.error(err);
   res.locals.message = err.message;
   res.locals.error = process.env.NODE_ENV !== "production" ? err : {};
   res.status(err.status || 500);
   res.render("error");
 });
 
-app.listen(app.get("port"), () => {
-  console.log(app.get("port"), "번 포트에서 대기 중");
-});
+module.exports = app;

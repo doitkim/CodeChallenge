@@ -42,13 +42,25 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
       }
       return res.redirect("/");
     });
-  })(req, res, next);
+  })(req, res, next); // 미들웨어 내의 미들웨어에는 (req, res, next)를 붙입니다.
 });
 
 router.get("/logout", isLoggedIn, (req, res) => {
-  req.logOut();
+  req.logout();
   req.session.destroy();
   res.redirect("/");
 });
+
+router.get("/kakao", passport.authenticate("kakao"));
+
+router.get(
+  "/kakao/callback",
+  passport.authenticate("kakao", {
+    failureRedirect: "/",
+  }),
+  (req, res) => {
+    res.redirect("/");
+  }
+);
 
 module.exports = router;

@@ -11,7 +11,7 @@ module.exports = class User extends Sequelize.Model {
         },
         nick: {
           type: Sequelize.STRING(15),
-          allowNull: true,
+          allowNull: false,
         },
         password: {
           type: Sequelize.STRING(100),
@@ -19,7 +19,7 @@ module.exports = class User extends Sequelize.Model {
         },
         provider: {
           type: Sequelize.STRING(10),
-          allowNull: true,
+          allowNull: false,
           defaultValue: "local",
         },
         snsId: {
@@ -29,7 +29,7 @@ module.exports = class User extends Sequelize.Model {
       },
       {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         underscored: false,
         modelName: "User",
         tableName: "users",
@@ -39,6 +39,7 @@ module.exports = class User extends Sequelize.Model {
       }
     );
   }
+
   static associate(db) {
     db.User.hasMany(db.Post);
     db.User.belongsToMany(db.User, {
