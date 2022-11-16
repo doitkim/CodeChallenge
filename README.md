@@ -55,6 +55,10 @@
   1. tsc app.ts 타입스크립트 -> 자바스크립트 파일로 컴파일
   2.
 
+## [유데미] React [⏯️]
+
+- ~ 30강
+
 ### 참고 사이트 https://www.typescriptlang.org/docs/
 
 - [✅] OverView
